@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EXMO", "EXMO\EXMO.shproj", "{622B4A43-8D0D-4E64-8EEC-2AFCD63F7E53}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		EXMO\EXMO.projitems*{622b4a43-8d0d-4e64-8eec-2afcd63f7e53}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C81F09BC-25DB-4DC0-A96B-53CB79CC2A73}
+	EndGlobalSection
+EndGlobal
