@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using DevExpress.Xpf.Core;
 using ExmoData.Model;
 using ExmoData;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ExmoClient
 {
@@ -22,18 +24,30 @@ namespace ExmoClient
     /// </summary>
     public partial class MainWindow : DXWindow
     {
+        private ExmoDt exmoData;
+
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            exmoData = new ExmoDt();
         }
 
         private void DXWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, Ticker> data = new ExmoDt().GetTicker();
-            Ticker res;
-            data.TryGetValue("BTC_USD", out res);
-            string st = res.Avg;
+            DisplayTick();            
         }
+
+        async void DisplayTick()
+        {
+            while (true)
+            {
+                //DataContext = exmoData.GetTickers(new string[2] { "BTC_USD", "XRP_USD" });
+
+                grData.ItemsSource = exmoData.GetTickers(new string[2] { "BTC_USD", "XRP_USD" });
+                await Task.Delay(2000);
+            }
+        }
+
     }
 }

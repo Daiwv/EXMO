@@ -31,8 +31,20 @@ namespace ExmoData
 
         public Dictionary<string, Ticker> GetTicker()
         {
-            Dictionary<string, string> res = new Dictionary<string, string>();
-            return Ticker.FromJson(exmoApi.ApiQuery("ticker", res));
+            return Ticker.FromJson(exmoApi.ApiQuery("ticker", new Dictionary<string, string>()));
+        }
+
+        public List<Ticker> GetTickers(string[] pairs)
+        {
+            List<Ticker> result = new List<Ticker>();
+            foreach (string pair in pairs)
+            {
+                Ticker res;
+                Ticker.FromJson(exmoApi.ApiQuery("ticker", new Dictionary<string, string>())).TryGetValue(pair, out res);
+                res.PairName = pair;
+                result.Add(res);
+            }
+            return result;
         }
     }
 }

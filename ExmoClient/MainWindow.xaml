@@ -5,5 +5,12 @@
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
         xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" x:Class="ExmoClient.MainWindow"
         Title="EXMO" Height="408.58" Width="705.932" Loaded="DXWindow_Loaded">
-    <Grid/>
+    <Grid>
+        <DataGrid x:Name="grData" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="368" Width="688" />
+        
+
+
+
+
+    </Grid>
 </dx:DXWindow>

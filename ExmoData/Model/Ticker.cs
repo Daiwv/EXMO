@@ -14,6 +14,8 @@ namespace ExmoData.Model
 
     public class Ticker
     {
+        public string PairName { get; set; }
+
         [JsonProperty("buy_price")]
         public string BuyPrice { get; set; }
 
